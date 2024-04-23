@@ -1,0 +1,37 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build wc",
+            "type": "shell",
+            "command": "bash",
+            "args": ["${workspaceFolder}/src/main/build-wc.sh"],
+            "problemMatcher": [],  
+            "group": {  
+              "kind": "build",  
+              "isDefault": true  
+            }, 
+            "presentation": {  
+              "reveal": "silent"  
+            }
+        },
+        {
+            "label": "delete temp out",
+            "type": "shell",
+            "command": "bash",
+            "args": ["${workspaceFolder}/src/main/delete-temp-out.sh"],
+            "problemMatcher": [],  
+            "group": {  
+              "kind": "build",  
+              "isDefault": true  
+            },  
+            "presentation": {  
+              "reveal": "silent"  
+            }
+        },
+        {
+            "label": "build wc && delete temp out",
+            "dependsOn": ["build wc", "delete temp out"]
+        }
+    ]
+}
